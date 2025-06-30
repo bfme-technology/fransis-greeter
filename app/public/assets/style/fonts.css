@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-display: swap;
+    src: url("./../fonts/Inter.ttf");
+}
+
+@font-face {
+    font-family: 'Lilita One';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("./../fonts/Lilita_One/LilitaOne-Regular.ttf");
+}

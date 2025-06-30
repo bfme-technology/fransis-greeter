@@ -1,0 +1,43 @@
+.dark {
+  --bg: #1e1e1f;
+  --fg: #f0f0f0;
+  --ac: #4caf50;
+  --at: #f0f0f0;
+  --sf: #181818;
+  --si: #141414;
+  --br: #413f3f;
+  --ob: #00000050;
+}
+
+.light {
+  --bg: #fafafa;
+  --fg: #212121;
+  --ac: #f57f17;
+  --at: #ffffff;
+  --sf: #ebe7e7;
+  --si: #f5f5f5;
+  --br: #eeeeee;
+  --ob: #21212150;
+}
+
+.purple {
+  --bg: #f3e5f5;
+  --fg: #004d40;
+  --ac: #4a148c;
+  --at: #f0f0f0;
+  --sf: #e6dbf4;
+  --si: #e6dbf4;
+  --br: #4db6ac;
+  --ob: #0000005f;
+}
+
+.marine {
+  --bg: #000000;
+  --fg: #e3e6fa;
+  --ac: #eeeb2e;
+  --at: #151724;
+  --sf: #151724;
+  --si: #151724;
+  --br: #16192b;
+  --ob: #0000008f;
+}

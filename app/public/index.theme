@@ -1,0 +1,6 @@
+[theme]
+name=Fransis
+description=This is a custom theme for LightDM WebKit Greeter, designed with support for multiple sessions, visual theme selection, and real-time visual logs.
+engine=lightdm-webkit-greeter
+url=index.html
+session=gnome

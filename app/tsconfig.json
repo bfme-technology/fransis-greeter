@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "ES6",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "jsx": "react-jsx",
+    "outDir": "build",
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "types": [
+      "react",
+      "react-dom",
+      "jest",
+      "node",
+      "@testing-library/jest-dom",
+      "@testing-library/react"
+    ],
+    "resolveJsonModule": true,
+    "inlineSources": false,
+    "inlineSourceMap": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictBindCallApply": true,
+    "noImplicitThis": true,
+    "useUnknownInCatchVariables": true,
+    "alwaysStrict": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "isolatedModules": true,
+    "noEmit": false
+  },
+  "include": [
+    "src",
+    "public",
+    "assets",
+    "tests",
+    "scripts",
+    "./src/types/global.d.ts"
+  ],
+  "exclude": ["node_modules"]
+}
