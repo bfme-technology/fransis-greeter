@@ -35,12 +35,14 @@
     "noEmit": false
   },
   "include": [
-    "src",
+    "types/global.d.ts",
+    "types/file-types.d.ts",
+    "src/**/*",
     "public",
     "assets",
     "tests",
     "scripts",
-    "./src/types/global.d.ts"
+    "types"
   ],
   "exclude": ["node_modules"]
 }
