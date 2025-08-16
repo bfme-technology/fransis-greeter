@@ -1,7 +1,7 @@
 import { useUserSelector } from "./../users/users.selectors";
 import { useEffect, useState } from "react";
 
-export const useTimer = () => {
+const useLanding = () => {
   const [date, setDate] = useState("30 Feb, 2025");
   const [time, setTime] = useState("23:59");
   const [actualZone, setActualZone] = useState<string>("");
@@ -43,5 +43,7 @@ export const useTimer = () => {
     const userList = document.querySelector("#user-list");
   };
 
-  return { date, time, pageShow, actualZone, majorClass };
+  return { pageShow, actualZone, majorClass };
 };
+
+export default useLanding;
