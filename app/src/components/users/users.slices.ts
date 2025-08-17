@@ -13,7 +13,7 @@ const INITIAL_USER_STATE: IUsersState = {
       username: "superman",
       logged_in: false,
       session: "gnome",
-
+      password: "",
       name: "superman",
       real_name: "Clark Kent",
     },
@@ -21,6 +21,7 @@ const INITIAL_USER_STATE: IUsersState = {
   selectedUser: null,
   isUserSelected: false,
   error: null,
+  isUserLoggedIn: false,
 };
 
 export const UsersSlice = createSlice({
@@ -44,9 +45,22 @@ export const UsersSlice = createSlice({
       state.error = action.payload;
       state.isLoading = false;
     },
+    setLogin: (
+      state,
+      action: PayloadAction<{ username: string; password: string }>
+    ) => {
+      const { username, password } = action.payload;
+      const user = state.users.find((user) => user.username === username);
+      if (user) {
+        user.logged_in = true;
+        user.password = password;
+        state.selectedUser = user;
+        state.isUserLoggedIn = true;
+      }
+    },
   },
 });
 
 export default UsersSlice.reducer;
-export const { setUsers, setLoading, setError, selectUser } =
+export const { setUsers, setLoading, setError, selectUser, setLogin } =
   UsersSlice.actions;

@@ -4,6 +4,7 @@ export interface IUsersState {
   selectedUser: IUser | null; // The currently selected user, if any
   error: string | null;
   isUserSelected: boolean; // Indicates if a user is selected
+  isUserLoggedIn: boolean;
 }
 
 export interface IUser {
@@ -17,4 +18,5 @@ export interface IUser {
   session: string;
   name: string;
   real_name: string;
+  password?: string;
 }

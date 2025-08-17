@@ -1,23 +1,34 @@
-import { selectUser } from "./../users/users.slices";
+import { selectUser, setLogin } from "./../users/users.slices";
 import { useAppDispatch } from "./../../store/store";
 import { useUserSelector } from "./../users/users.selectors";
 import { useEffect, useState } from "react";
 
 export const useLogin = () => {
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
   const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Logic for handling login
+    dispatch(
+      setLogin({
+        username: username,
+        password: password,
+      })
+    );
   };
+
   const [majorClass, setMajorClass] = useState("show");
   const dispatch = useAppDispatch();
   const userState = useUserSelector();
   useEffect(() => {
     if (userState.selectedUser && userState.isUserSelected) {
       setMajorClass("hide");
+      setUsername(userState.selectedUser.name);
     } else {
       setMajorClass("show");
     }
   }, [userState.selectedUser]);
+
   const pageShow = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
     event.stopPropagation();
@@ -26,9 +37,12 @@ export const useLogin = () => {
   };
 
   const handlePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // Logic to handle password input
     console.log("Password entered:", event.target.value);
+    if (password != event.target.value) {
+      setPassword(event.target.value);
+    }
   };
+
   return {
     handleLogin,
     pageShow,
