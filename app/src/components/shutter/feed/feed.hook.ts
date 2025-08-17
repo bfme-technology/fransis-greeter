@@ -22,8 +22,10 @@ const useFeed = () => {
         setLoading(false);
         return;
       }
-      setFeed(data);
-      setLoading(false);
+      setInterval(() => {
+        setLoading(false);
+        setFeed(data);
+      }, 2000);
     };
     getFeed();
   }, [fetchFeed]);

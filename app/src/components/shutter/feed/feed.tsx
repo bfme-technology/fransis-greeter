@@ -7,18 +7,19 @@ const Feed = () => {
   const { feed, loading } = useFeed();
   return (
     <FeedContainer>
-      {loading ? <Skeleton count={1} /> : <h2>Feed</h2>}
-      {loading ? <Skeleton count={1} /> : <p>Latest updates and news</p>}
-
-      {loading && <Skeleton count={10} />}
-      {!loading && !feed && <p>No feed data available</p>}
-      {!loading && feed && feed.articles?.length > 0 && (
-        <ul>
-          {feed.articles.map((article) => (
-            <CardWidget key={article.title} {...article} />
-          ))}
-        </ul>
-      )}
+      <h2>{loading ? <Skeleton count={1} /> : <>Feed</>} </h2>
+      <p>{loading ? <Skeleton count={1} /> : <>Latest updates and news</>}</p>
+      <ul>
+        {loading && <Skeleton count={10} />}
+        {!loading && !feed && <>No feed data available</>}
+        {!loading && feed && feed.articles?.length > 0 && (
+          <>
+            {feed.articles.map((article) => (
+              <CardWidget key={article.title} {...article} />
+            ))}
+          </>
+        )}
+      </ul>
     </FeedContainer>
   );
 };

@@ -4,11 +4,12 @@ import Loader from "./components/loader/loader";
 import useApp from "app.hook";
 import Landing from "./components/landing/landing";
 import Shutter from "./components/shutter/shutter";
+import AppContainer from "./app.styles";
 
 const App = () => {
   const { isLoading, message, inactivityShutter } = useApp();
   return (
-    <div className="dark">
+    <AppContainer className="dark">
       <Loader message={message} isLoading={isLoading} />
       {/* {!isLoading && !inactivityShutter && (
         <>
@@ -20,7 +21,7 @@ const App = () => {
       <Shutter />
 
       <Settings />
-    </div>
+    </AppContainer>
   );
 };
 
