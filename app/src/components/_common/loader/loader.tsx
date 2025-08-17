@@ -12,7 +12,12 @@ const Loader = (props: LoaderProps) => {
     <LoaderContainer>
       {type == LoaderType.SKELETON && <Skeleton />}
       {type == LoaderType.SPINNER && (
-        <div className="spinner-loader">{message}</div>
+        <>
+          <div className="loader">
+            <div className="spinner"></div>
+          </div>
+          <p>{message}</p>
+        </>
       )}
     </LoaderContainer>
   );
