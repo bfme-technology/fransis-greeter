@@ -2,7 +2,8 @@ import { useUserSelector } from "./../users/users.selectors";
 import { useLogin } from "./login.hook";
 import UserImage from "./../users/user/user_1.jpg";
 const Login = () => {
-  const { handleLogin, pageShow, majorClass, user } = useLogin();
+  const { handleLogin, pageShow, majorClass, user, handlePassword } =
+    useLogin();
   const UserState = useUserSelector();
 
   return (
@@ -18,6 +19,7 @@ const Login = () => {
             type="password"
             id="usr_password"
             placeholder="Enter your password"
+            onChange={handlePassword}
           />
         </div>
         <button className="simulate_link" onClick={pageShow} type="reset">

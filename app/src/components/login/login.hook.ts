@@ -24,10 +24,16 @@ export const useLogin = () => {
     dispatch(selectUser(null)); // Reset selected user
     // Logic to show the user list or go back to the user selection page
   };
+
+  const handlePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // Logic to handle password input
+    console.log("Password entered:", event.target.value);
+  };
   return {
     handleLogin,
     pageShow,
     majorClass,
     user: userState.selectedUser,
+    handlePassword,
   };
 };
