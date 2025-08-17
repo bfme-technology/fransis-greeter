@@ -5,8 +5,8 @@ const Timer = () => {
   const { time, date, timeZone } = useTime();
   return (
     <ClockContainer>
-      <div className="welcome clock">
-        <p>
+      <div className="clock">
+        <p className="date">
           <span>{date}</span>
           <span>|</span>
           <span>{timeZone}</span>
